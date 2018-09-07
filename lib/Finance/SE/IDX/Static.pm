@@ -4847,6 +4847,11 @@ my $res = gen_read_table_func(
 );
 $res->[0] == 200 or die "Can't generate list_idx_firms function: $res->[0] - $res->[1]";
 
+$SPEC{list_idx_boards} = {
+    v => 1.1,
+    summary => 'List boards',
+    args => {},
+};
 sub list_idx_boards {
     state $res = do {
         my %seen;
@@ -4856,6 +4861,11 @@ sub list_idx_boards {
     $res;
 }
 
+$SPEC{list_idx_sectors} = {
+    v => 1.1,
+    summary => 'List sectors',
+    args => {},
+};
 sub list_idx_sectors {
     state $res = do {
         my %seen;
