@@ -4846,12 +4846,8 @@ my $res = gen_read_table_func(
     filter_fields => ['sector', 'board'],
 );
 $res->[0] == 200 or die "Can't generate list_idx_firms function: $res->[0] - $res->[1]";
+%SPEC = (); # we're not using the Rinci metadata
 
-$SPEC{list_idx_boards} = {
-    v => 1.1,
-    summary => 'List boards',
-    args => {},
-};
 sub list_idx_boards {
     state $res = do {
         my %seen;
@@ -4861,11 +4857,6 @@ sub list_idx_boards {
     $res;
 }
 
-$SPEC{list_idx_sectors} = {
-    v => 1.1,
-    summary => 'List sectors',
-    args => {},
-};
 sub list_idx_sectors {
     state $res = do {
         my %seen;
@@ -4876,23 +4867,11 @@ sub list_idx_sectors {
 }
 
 1;
-# ABSTRACT:
+# ABSTRACT: Get information from Indonesian Stock Exchange (static version)
 
 =head1 SYNOPSIS
 
- use Finance::SE::IDX::Static qw(list_idx_firms list_idx_sectors list_idx_boards);
-
- my $res = list_idx_boards();
-
- my $res = list_idx_firms();
-
- # filter by sectors and/or board
- my $res = list_idx_firms(
-     board => "PENGEMBANGAN", # for development board, or "UTAMA" for main board
-     sector => "AGRI",
- );
-
- my $res = list_idx_sectors();
+Use like you would use L<Finance::SE::IDX>.
 
 
 =head1 DESCRIPTION
@@ -4901,6 +4880,15 @@ This module is the static (offline) version of L<Finance::SE::IDX>. It provides
 the same functions and arguments, but the data is cached in the source code. It
 is useful as a fallback when the source that Finance::SE::IDX uses is
 unavailable. As a consequence, the data will be somewhat out of date.
+
+
+=head1 FUNCTIONS
+
+=head2 list_idx_boards
+
+=head2 list_idx_firms
+
+=head2 list_idx_sectors
 
 
 =head1 SEE ALSO
