@@ -4,10 +4,11 @@
 
 	      - [doc] Mention Finance::SE::IDX::Any.
 
-	      - [doc] Tweak Abstract, remove Rinci metadata and Synopsis to
-		reduce duplication.
+	      - [doc] Tweak Abstract.
+
+              - [doc] Remove Rinci metadata and Synopsis to reduce duplication.
 
 
 20180907.0.0  2018-09-07 (PERLANCAR)
 
-        - First release.
+              - First release.
