@@ -4895,4 +4895,6 @@ unavailable. As a consequence, the data will be somewhat out of date.
 
 L<Finance::SE::IDX>
 
+L<Finance::SE::IDX::Any>
+
 =cut
