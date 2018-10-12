@@ -1,0 +1,77 @@
+#!/usr/bin/env perl
+
+use 5.010001;
+use strict;
+use warnings;
+use FindBin '$Bin';
+use Log::ger;
+use Log::ger::App;
+
+# first version defaults to latest archive
+{
+    my $dir = $ARGV[0] // [sort(glob "$Bin/../archive/*")]->[-1] . "/lib";
+    local @INC = ($dir, @INC);
+    require Finance::SE::IDX::Static;
+    log_warn("Loading Finance::SE::IDX::Static version %s", ($Finance::SE::IDX::Static::VERSION // 'dev'));
+    log_debug("%%INC = %s", \%INC);
+    die "Didn't load the desired first version" unless $INC{"Finance/SE/IDX/Static.pm"} eq "$dir/Finance/SE/IDX/Static.pm";
+}
+
+my $res;
+
+$res = Finance::SE::IDX::Static::list_idx_firms();
+my @old_firms = @{ $res->[2] };
+my %old_firms; for (@old_firms) { $old_firms{$_->{code}} = $_ }
+
+delete $INC{"Finance/SE/IDX/Static.pm"};
+undef $Finance::SE::IDX::Static::VERSION;
+
+{
+    my $dir = $ARGV[1] // "$Bin/../lib";
+    local @INC = ($dir, @INC);
+    require Finance::SE::IDX::Static;
+    log_warn("Loading Finance::SE::IDX::Static version %s", ($Finance::SE::IDX::Static::VERSION // 'dev'));
+    log_debug("%%INC = %s", \%INC);
+    die "Didn't load the desired second version" unless $INC{"Finance/SE/IDX/Static.pm"} eq "$dir/Finance/SE/IDX/Static.pm";
+}
+
+$res = Finance::SE::IDX::Static::list_idx_firms();
+my @new_firms = @{ $res->[2] };
+my %new_firms; for (@new_firms) { $new_firms{$_->{code}} = $_ }
+
+my $indent = "          ";
+
+say "${indent}- New firms:";
+for my $code (sort keys %new_firms) {
+    next if $old_firms{$code};
+    my $f = $new_firms{$code};
+    say "${indent}  + $f->{code} ($f->{name})";
+}
+say "";
+
+say "${indent}- Delisted firms:";
+for my $code (sort keys %old_firms) {
+    next if $new_firms{$code};
+    my $f = $old_firms{$code};
+    say "${indent}  + $f->{code} ($f->{name})";
+}
+say "";
+
+#say "${indent}- Changed coins:";
+#for my $n (sort keys %new_safenames) {
+#    my $e2 = $new_safenames{$n};
+#    my $e1 = $old_safenames{$n};
+#    next unless $e1;
+#    my @chgs;
+#    if ($e1->{name} ne $e2->{name}) {
+#        push @chgs, "changed name from $e1->{name}";
+#    }
+#    if ($e1->{code} ne $e2->{code}) {
+#        push @chgs, "changed code from $e1->{code}";
+#    }
+#    next unless @chgs;
+#    say "${indent}  + $e2->{name} ($e2->{code}) ".join(", ", @chgs);
+#}
+#say "";
+
+say "${indent}- Total firms now ".(scalar keys %new_firms)." (from ".(scalar %old_firms).")";
