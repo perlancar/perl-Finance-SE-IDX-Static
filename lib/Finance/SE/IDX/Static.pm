@@ -8,6 +8,7 @@ use strict;
 use warnings;
 
 use Perinci::Sub::Gen::AccessTable::Simple qw(gen_read_table_func);
+#use Perinci::Sub::Gen::AccessTable qw(gen_read_table_func);
 
 use Exporter;
 our @ISA = qw(Exporter);
@@ -5734,6 +5735,7 @@ my $res = gen_read_table_func(
     table_data => $data,
     field_names => $field_names,
     filter_fields => ['sector', 'board'],
+    case_insensitive_comparison => 1,
 );
 $res->[0] == 200 or die "Can't generate list_idx_firms function: $res->[0] - $res->[1]";
 %SPEC = (); # we're not using the Rinci metadata
@@ -5741,7 +5743,7 @@ $res->[0] == 200 or die "Can't generate list_idx_firms function: $res->[0] - $re
 sub list_idx_boards {
     state $res = do {
         my %seen;
-        for (@$data) { next unless $_->[5]; $seen{$_->[5]}++ }
+        for (@$data) { next unless $_->[5]; $seen{lc $_->[5]}++ }
         [200, "OK", [sort keys %seen]];
     };
     $res;
