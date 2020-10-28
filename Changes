@@ -1,4 +1,4 @@
-20181129.0.0  2018-11-29 (PERLANCAR)
+20181129.0.0  2018-11-29  Released-By: PERLANCAR
 
           - Update data.
 
@@ -30,7 +30,7 @@
           - Total firms now 615 (from 598)
 
 
-20181012.0.0  2018-10-12 (PERLANCAR)
+20181012.0.0  2018-10-12  Released-By: PERLANCAR
 
           - Update data.
 
@@ -54,21 +54,21 @@
           - Total firms now 607 (from 598).
 
 
-20180907.1.1  2018-09-08 (PERLANCAR)
+20180907.1.1  2018-09-08  Released-By: PERLANCAR
 
 	      - No data changes.
 
 	      - [build] Rebuild to fix repository URL.
 
 
-20180907.1.0  2018-09-08 (PERLANCAR)
+20180907.1.0  2018-09-08  Released-By: PERLANCAR
 
 	      - No data changes.
 
 	      - Add $data_mtime.
 
 
-20180907.0.1  2018-09-08 (PERLANCAR)
+20180907.0.1  2018-09-08  Released-By: PERLANCAR
 
 	      - No data changes.
 
@@ -79,6 +79,6 @@
               - [doc] Remove Rinci metadata and Synopsis to reduce duplication.
 
 
-20180907.0.0  2018-09-07 (PERLANCAR)
+20180907.0.0  2018-09-07  Released-By: PERLANCAR
 
               - First release.
