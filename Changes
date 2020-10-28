@@ -1,20 +1,20 @@
-20181129.0.0  2018-11-29  Released-By: PERLANCAR
+20181129.0.0  2018-11-29 (PERLANCAR)
 
           - Update data.
 
           - New firms:
             + CAKK (Cahayaputra Asa Keramik Tbk.)
             + CITY (Natura City Developments Tbk.)
-            + DEAL  Released-By: Dewata Freightinternational Tb
+            + DEAL (Dewata Freightinternational Tb)
             + DIGI (Arkadia Digital Media Tbk.)
-            + DIVA  Released-By: Distribusi Voucher Nusantara T
+            + DIVA (Distribusi Voucher Nusantara T)
             + DUCK (Jaya Bersama Indo Tbk.)
-            + GOOD  Released-By: Garudafood Putra Putri Jaya Tb
+            + GOOD (Garudafood Putra Putri Jaya Tb)
             + HKMU (HK Metals Utama Tbk.)
             + KPAS (Cottonindo Ariesta Tbk.)
             + LUCK (Sentral Mitra Informatika Tbk.)
-            + MPRO  Released-By: Propertindo Mulia Investama Tb
-            + PANI  Released-By: Pratama Abadi Nusa Industri Tb
+            + MPRO (Propertindo Mulia Investama Tb)
+            + PANI (Pratama Abadi Nusa Industri Tb)
             + POLA (Pool Advista Finance Tbk.)
             + SAPX (Satria Antaran Prima Tbk.)
             + SATU (Kota Satu Properti Tbk.)
@@ -24,13 +24,13 @@
             + YELO (Yelooo Integra Datanet Tbk.)
 
           - Delisted firms:
-            + JPRS  Released-By: Jaya Pari Steel Tbk
-            + TRUB  Released-By: Truba Alam Manunggal Engineeri
+            + JPRS (Jaya Pari Steel Tbk)
+            + TRUB (Truba Alam Manunggal Engineeri)
 
-          - Total firms now 615  Released-By: from 598
+          - Total firms now 615 (from 598)
 
 
-20181012.0.0  2018-10-12  Released-By: PERLANCAR
+20181012.0.0  2018-10-12 (PERLANCAR)
 
           - Update data.
 
@@ -38,37 +38,37 @@
             + CITY (Natura City Developments Tbk.)
             + DIGI (Arkadia Digital Media Tbk.)
             + DUCK (Jaya Bersama Indo Tbk.)
-            + GOOD  Released-By: Garudafood Putra Putri Jaya Tb
+            + GOOD (Garudafood Putra Putri Jaya Tb)
             + HKMU (HK Metals Utama Tbk.)
             + KPAS (Cottonindo Ariesta Tbk.)
-            + MPRO  Released-By: Propertindo Mulia Investama Tb
-            + PANI  Released-By: Pratama Abadi Nusa Industri Tb
+            + MPRO (Propertindo Mulia Investama Tb)
+            + PANI (Pratama Abadi Nusa Industri Tb)
             + SAPX (Satria Antaran Prima Tbk.)
             + SKRN (Superkrane Mitra Utama Tbk.)
             + SURE (Super Energy Tbk.)
 
           - Delisted firms:
-            + JPRS  Released-By: Jaya Pari Steel Tbk
-            + TRUB  Released-By: Truba Alam Manunggal Engineeri
+            + JPRS (Jaya Pari Steel Tbk)
+            + TRUB (Truba Alam Manunggal Engineeri)
 
           - Total firms now 607 (from 598).
 
 
-20180907.1.1  2018-09-08  Released-By: PERLANCAR
+20180907.1.1  2018-09-08 (PERLANCAR)
 
 	      - No data changes.
 
 	      - [build] Rebuild to fix repository URL.
 
 
-20180907.1.0  2018-09-08  Released-By: PERLANCAR
+20180907.1.0  2018-09-08 (PERLANCAR)
 
 	      - No data changes.
 
 	      - Add $data_mtime.
 
 
-20180907.0.1  2018-09-08  Released-By: PERLANCAR
+20180907.0.1  2018-09-08 (PERLANCAR)
 
 	      - No data changes.
 
@@ -79,6 +79,6 @@
               - [doc] Remove Rinci metadata and Synopsis to reduce duplication.
 
 
-20180907.0.0  2018-09-07  Released-By: PERLANCAR
+20180907.0.0  2018-09-07 (PERLANCAR)
 
               - First release.
