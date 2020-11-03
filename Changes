@@ -1,3 +1,14 @@
+20201028.0.1  2020-11-03  Released-By: PERLANCAR; Urgency: medium
+
+              - No data update.
+
+	      - Bump prereq version
+		Perinci::Sub::Gen::AccessTable::Simple=0.002 (RT#133645).
+
+	      - Didn't get archive checked in because of .gitignore
+		misconfiguration.
+
+
 20201028.0.0  2020-10-28  Released-By: PERLANCAR
 
           - New firms:
