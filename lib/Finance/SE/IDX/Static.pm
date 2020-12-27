@@ -5765,8 +5765,11 @@ my $res = gen_read_table_func(
     case_insensitive_comparison => 1,
 );
 $res->[0] == 200 or die "Can't generate list_idx_firms function: $res->[0] - $res->[1]";
-%SPEC = (); # we're not using the Rinci metadata
 
+$SPEC{list_idx_boards} = {
+    v => 1.1,
+    summary => 'List boards on IDX',
+};
 sub list_idx_boards {
     state $res = do {
         my %seen;
@@ -5776,6 +5779,10 @@ sub list_idx_boards {
     $res;
 }
 
+$SPEC{list_idx_sectors} = {
+    v => 1.1,
+    summary => 'List sectors on IDX',
+};
 sub list_idx_sectors {
     state $res = do {
         my %seen;
@@ -6519,7 +6526,6 @@ $res = gen_read_table_func(
     case_insensitive_comparison => 1,
 );
 $res->[0] == 200 or die "Can't generate list_idx_brokers function: $res->[0] - $res->[1]";
-%SPEC = (); # we're not using the Rinci metadata
 
 1;
 # ABSTRACT: Get information from Indonesian Stock Exchange (static version)
@@ -6535,17 +6541,6 @@ This module is the static (offline) version of L<Finance::SE::IDX>. It provides
 the same functions and arguments, but the data is cached in the source code. It
 is useful as a fallback when the source that Finance::SE::IDX uses is
 unavailable. As a consequence, the data will be somewhat out of date.
-
-
-=head1 FUNCTIONS
-
-=head2 list_idx_boards
-
-=head2 list_idx_brokers
-
-=head2 list_idx_firms
-
-=head2 list_idx_sectors
 
 
 =head1 SEE ALSO
